@@ -1,6 +1,6 @@
 # Create a simple drawing with a combination of lines, rectangles, and circles:
 
-Draw a house with a rectangle as the body, a triangle as the roof, and a rectangle as the door. a sun in the sky using a circle and lines radiating outwards.
+Draw a house with a rectangle as the body, a triangle as the roof, and a rectangle as the door and windows. a sun in the sky using a circle and lines radiating outwards.
 
 # Sun Rays Drawing with HTML5 Canvas and Svelte
 
