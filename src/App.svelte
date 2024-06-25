@@ -5,7 +5,7 @@
 </script>
 
 <main>
-  <h1>HTML5 Canvas with Svelte</h1>
+  <h1>Canvas in Svelte</h1>
   <p>
     practice and learn to draw shapes and lines on the canvas. Understanding
     canvas coordinate system, Integrating Canvas API with Svelte components
