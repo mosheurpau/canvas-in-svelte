@@ -1,47 +1,62 @@
-# Svelte + Vite
+# Create a simple drawing with a combination of lines, rectangles, and circles:
 
-This template should help get you started developing with Svelte in Vite.
+Draw a house with a rectangle as the body, a triangle as the roof, and a rectangle as the door. a sun in the sky using a circle and lines radiating outwards.
 
-## Recommended IDE Setup
+# Sun Rays Drawing with HTML5 Canvas and Svelte
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+The loop runs 8 times, and in each iteration:
 
-## Need an official Svelte framework?
+- A new path is started.
+- The drawing cursor is moved to the center point (400, 50).
+- A line is drawn to a point 40 pixels away from the center, at an angle determined by the current iteration of the loop ((i \* Math.PI) / 4).  
+  400 + 40 _ Math.cos((i _ Math.PI) / 4): This calculates the x-coordinate of the endpoint of the ray.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+50 + 40 _ Math.sin((i _ Math.PI) / 4): This calculates the y-coordinate of the endpoint of the ray using the sine function, similar to the x-coordinate calculation.
 
-## Technical considerations
+- The line is drawn with the stroke color #FFD700 and a width of 2 pixels.
 
-**Why use this over SvelteKit?**
+# Visual Representation
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+Here's a step-by-step visualization of the rays being drawn:
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+Iteration 0 (i = 0):
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+Angle: 0 radians (0 degrees)
+Endpoint: (440, 50)
+A ray is drawn from (400, 50) to (440, 50).
+Iteration 1 (i = 1):
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+Angle: π/4 radians (45 degrees)
+Endpoint: (428.28, 78.28)
+A ray is drawn from (400, 50) to (428.28, 78.28).
+Iteration 2 (i = 2):
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+Angle: π/2 radians (90 degrees)
+Endpoint: (400, 90)
+A ray is drawn from (400, 50) to (400, 90).
+Iteration 3 (i = 3):
 
-**Why include `.vscode/extensions.json`?**
+Angle: 3π/4 radians (135 degrees)
+Endpoint: (371.72, 78.28)
+A ray is drawn from (400, 50) to (371.72, 78.28).
+Iteration 4 (i = 4):
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+Angle: π radians (180 degrees)
+Endpoint: (360, 50)
+A ray is drawn from (400, 50) to (360, 50).
+Iteration 5 (i = 5):
 
-**Why enable `checkJs` in the JS template?**
+Angle: 5π/4 radians (225 degrees)
+Endpoint: (371.72, 21.72)
+A ray is drawn from (400, 50) to (371.72, 21.72).
+Iteration 6 (i = 6):
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+Angle: 3π/2 radians (270 degrees)
+Endpoint: (400, 10)
+A ray is drawn from (400, 50) to (400, 10).
+Iteration 7 (i = 7):
 
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+Angle: 7π/4 radians (315 degrees)
+Endpoint: (428.28, 21.72)
+A ray is drawn from (400, 50) to (428.28, 21.72).
+By the end of the loop, 8 evenly spaced rays are drawn around the central point (400, 50).

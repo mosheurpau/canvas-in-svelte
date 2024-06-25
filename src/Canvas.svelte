@@ -24,6 +24,8 @@
     ctx.fillRect(100, 100, 150, 100);
     ctx.strokeStyle = "#0000ff";
     ctx.strokeRect(300, 300, 100, 150);
+    ctx.fillStyle = "#0000ff";
+    ctx.fillRect(100, 300, 100, 150);
 
     // Draw a circle
     ctx.beginPath();
