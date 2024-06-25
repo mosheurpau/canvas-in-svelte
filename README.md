@@ -8,11 +8,7 @@ The loop runs 8 times, and in each iteration:
 
 - A new path is started.
 - The drawing cursor is moved to the center point (400, 50).
-- A line is drawn to a point 40 pixels away from the center, at an angle determined by the current iteration of the loop ((i \* Math.PI) / 4).  
-  400 + 40 _ Math.cos((i _ Math.PI) / 4): This calculates the x-coordinate of the endpoint of the ray.
-
-50 + 40 _ Math.sin((i _ Math.PI) / 4): This calculates the y-coordinate of the endpoint of the ray using the sine function, similar to the x-coordinate calculation.
-
+- A line is drawn to a point 40 pixels away from the center, at an angle determined by the current iteration of the loop ((i \* Math.PI) / 4). 400 + 40 _ Math.cos((i _ Math.PI) / 4): This calculates the x-coordinate of the endpoint of the ray. 50 + 40 _ Math.sin((i _ Math.PI) / 4): This calculates the y-coordinate of the endpoint of the ray using the sine function, similar to the x-coordinate calculation.
 - The line is drawn with the stroke color #FFD700 and a width of 2 pixels.
 
 # Visual Representation
